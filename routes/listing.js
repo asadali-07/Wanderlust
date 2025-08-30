@@ -14,13 +14,7 @@ router
 
 router.get("/new",userLogin,ListingController.new)
 router.get("/search",wrapAsync(ListingController.search))
-router.get("/trending",ListingController.trending)
-router.get("/iconic",ListingController.iconic)
-router.get("/mountains",ListingController.mountains)
-router.get("/castles",ListingController.castles)
-router.get("/amazingpools",ListingController.amgpools)
-router.get("/artics",ListingController.artics)
-router.get("/island",ListingController.island)
+router.get("/category/:category",wrapAsync(ListingController.category))
 
 router
 .route("/:id")
