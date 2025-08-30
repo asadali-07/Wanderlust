@@ -95,17 +95,6 @@ h1{
     cursor: pointer;
     opacity: 1;
  }
- .tax-info{
-    display: none;
- }
- .tax-toggle{
-    margin-top: 0.5rem;
-    border: 1px solid black;
-    border-radius: 1rem;
-    height:2.7rem;
-    background-color: #f7f6f6;
-    width: 15rem;
- }
  @media(max-width:574px) {
     .list{
         margin-left:2.7rem;
