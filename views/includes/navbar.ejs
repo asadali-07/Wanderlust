@@ -5,9 +5,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings"><b>Explore</b></a>
-        </div>
         <div class="navbar-nav ms-auto">
           <form class="d-flex" role="search" action="/listings/search">
             <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search destination" aria-label="Search" name="q">
@@ -15,7 +12,7 @@
           </form>
         </div>
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new"><b>Airbnd your home</b></a>
+          <a class="nav-link" href="/listings/new"><b>Airbnb your home</b></a>
           <% if(currentUser){ %>
             <a class="nav-link" href="/logout"><b>Logout</b></a>
             <% } %>
