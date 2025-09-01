@@ -56,7 +56,10 @@
                <div class="invalid-feedback">Category should be valid</div>
                </div>
            </div>
-       <button class="btn btn-danger">Update</button>
+       <div class="d-flex gap-3">
+        <button class="btn btn-danger">Update</button>
+       <a href="/listings/<%= listing._id %>" class="btn btn-warning " > Cancel </a>
+       </div>
     </form>
     </div>
 </div>

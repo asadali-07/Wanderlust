@@ -7,7 +7,7 @@
   <div class="container my-5">
     <div class="col-10 offset-1">
       <!-- Title -->
-      <h1 class="fw-bold mb-4 text-primary">
+      <h1 class="fw-bold mb-4 text-danger">
         <i class="bi bi-house-door"></i> <%= listing.title %>
       </h1>
 
@@ -15,9 +15,8 @@
       <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
         <img
           src="<%= listing.image.url %>"
-          class="card-img-top show-image"
+          class="card-show-image show-image"
           alt="Listing Image"
-          style="height: 400px; object-fit: cover"
         />
         <div class="card-body p-4">
           <p class="card-text text-muted">
@@ -31,7 +30,7 @@
               <small class="text-muted">/ night</small>
             </span>
             <span
-              class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2"
+              class="badge bg-danger-subtle text-danger rounded-pill px-3 py-2"
             >
               <%= listing.category %>
             </span>
@@ -53,9 +52,9 @@
         <div class="col-6">
           <a
             href="/listings/<%= listing._id %>/edit"
-            class="btn btn-warning w-100 rounded-pill shadow-sm"
+            class="btn btn-warning w-100 rounded-pill shadow-sm  d-flex justify-content-center align-items-center gap-2"
           >
-            <i class="bi bi-pencil-square"></i> Edit this listing
+            <i class="fa-solid fa-pencil"></i> Edit this listing
           </a>
         </div>
         <div class="col-6">
@@ -63,8 +62,8 @@
             action="/listings/<%= listing._id %>?_method=DELETE"
             method="post"
           >
-            <button class="btn btn-danger w-100 rounded-pill shadow-sm">
-              <i class="bi bi-trash3"></i> Delete Listing
+            <button class="btn btn-danger w-100 rounded-pill shadow-sm d-flex justify-content-center align-items-center gap-2">
+              <i class="fa-solid fa-trash"></i> Delete Listing
             </button>
           </form>
         </div>

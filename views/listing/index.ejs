@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
-<div class="filters d-none d-sm-flex flex-row gap-5 flex-wrap align-items-center justify-content-center">
+<div class="filters d-none d-sm-flex flex-row gap-5 flex-wrap align-items-center justify-content-center mb-3">
   <% const categories = [ { name: "trending", icon: "fa-fire", label: "Trending"
   }, { name: "iconic", icon: "fa-mountain-city", label: "Iconic Cities" }, {
   name: "mountains", icon: "fa-mountain", label: "Mountains" }, { name:
@@ -11,7 +11,7 @@
   <div class="filter text-center mt-3">
     <a
       href="/listings/category/<%= cat.name %>"
-      class="link-underline link-underline-opacity-0 text-black"
+      class="link-underline link-underline-opacity-0 text-black icon"
     >
       <i class="fa-solid <%= cat.icon %>"></i>
       <p><%= cat.label %></p>
@@ -36,7 +36,7 @@
   <% for (listing of allListings) {%>
   <a href="/listings/<%= listing._id %>" class="link">
     <div class="card listing-card">
-      <img src="<%= listing.image.url %>" class="card-img-top" alt="..." />
+      <img src="<%= listing.image.url %>" class="card-img" alt="..." />
       <div class="card-img-overlay"></div>
       <div class="card-body">
         <h5 class="card-title"><%= listing.title %></h5>

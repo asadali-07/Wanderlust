@@ -1,11 +1,9 @@
-if(process.env.NODE_ENV!="production"){
+if(process.env.NODE_ENV!=="production"){
     require('dotenv').config()
 }
 const express=require("express");
 const app=express();
-const wrapAsync=require("./utils/wrapAsync")
 const mongoose=require("mongoose");
-const Listing=require("./models/listing");
 const User=require("./models/user");
 const path=require("path");
 const methodOverride=require("method-override")
@@ -25,7 +23,6 @@ const MongoStore = require('connect-mongo');
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
 
-const dbUrl=process.env.ATLAS_URL;
 main().then(()=>{
     console.log("Connected to MongoDB");
  }).catch(error=>{
@@ -33,11 +30,11 @@ main().then(()=>{
    
  });
 async function main(){
-    await mongoose.connect(dbUrl)
+    await mongoose.connect(process.env.ATLAS_URL)
 }
 
 const store= MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: process.env.ATLAS_URL,
     crypto:{
         secret: process.env.SECRET,
         algorithm: "aes-256-ctr"
@@ -62,8 +59,8 @@ const sessionOptions={
 app.use(session(sessionOptions));
 app.use(flash());
 
-app.use(passport.session());
 app.use(passport.initialize());
+app.use(passport.session());
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -89,7 +86,10 @@ app.get("/privacy-policy",(req,res)=>{
 app.get("/about",(req,res)=>{
     res.render("./listing/about.ejs")
 })
-app.use("/",(eq,res)=>{
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+})
+app.use("*",(req,res)=>{
     res.status(404).render("./listing/404.ejs")
 })
 app.listen(8080,()=>{
