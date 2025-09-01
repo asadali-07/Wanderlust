@@ -6,9 +6,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search" action="/listings/search">
-            <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search destination" aria-label="Search" name="q">
-            <button class="btn btn-outline-danger my-2 my-sm-0 mx-3 d-flex flex-row gap-1 rounded-pill " type="submit"> <i class="fa-solid fa-magnifying-glass my-1"></i>Search</button>
+          <form class="d-flex mt-md-3 mt-sm-3 justify-content-center align-items-center" role="search" action="/listings/search">
+            <input class="form-control search mr-sm-2 rounded-pill" type="search" placeholder="Search for listings" aria-label="Search" name="q">
+            <button class="btn btn-outline-danger my-2 my-sm-0 mx-3 rounded-circle" type="submit"> <i class="fa-solid fa-magnifying-glass my-1"></i></button>
           </form>
         </div>
         <div class="navbar-nav ms-auto">
@@ -17,7 +17,6 @@
             <a class="nav-link" href="/logout"><b>Logout</b></a>
             <% } %>
             <% if(!currentUser){ %>
-          <a class="nav-link " aria-current="page" href="/signup"><b>Sign Up</b></a>
           <a class="nav-link" href="/login"><b>Login</b></a>
           <% } %>
         </div>

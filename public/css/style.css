@@ -15,6 +15,9 @@ h1{
     height: 4rem ;
     background-color: white;
 }
+.search{
+    width: 40vw;
+}
 .navbar-brand:hover{
     color: rgb(255, 2, 2);
 }
@@ -71,6 +74,11 @@ h1{
 }
 .card-img-overlay{
     opacity: 0;
+    height: 14.8rem;
+    width: 15.6rem;
+    margin-top: 1rem;
+    margin-left: 1.1rem;
+    border-radius: 1rem;
 }
 .card-img-overlay:hover{
     opacity:.2;
@@ -79,9 +87,21 @@ h1{
 .link{
     text-decoration: none;
 }
-.card .show-image{
-    height: 30%;
-    width: 70%;
+.show-image {
+  border-bottom: 4px solid #f8f9fa;
+  transition: transform 0.3s ease-in-out;
+}
+
+.show-image:hover {
+  transform: scale(1.02);
+}
+
+.card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
 }
 /* style for map */
 #map {
@@ -95,12 +115,13 @@ h1{
     cursor: pointer;
     opacity: 1;
  }
- @media(max-width:574px) {
+@media(max-width:574px) {
+    .search{
+        width: 75vw;
+    }
     .list{
         margin-left:2.7rem;
     }
-}
-@media(max-width:574px) {
     .footer{
         height: 6rem;
         width: 100%;
@@ -109,8 +130,6 @@ h1{
         justify-content: center;
         align-items: center;
     }
-}
- @media(max-width:574px) {
     .social-links{
         height: 3rem;
         display: flex;
@@ -118,17 +137,18 @@ h1{
         align-items: center;
         gap: 10px;
     }
-}
- @media(max-width:574px) {
     .filter{
         width: 100%;
     }
-}
- @media(max-width:574px) {
     .privacy{
         height: 2rem;
         display: flex;
         justify-content: space-evenly;
         width: 100%;
     }
+}
+@media (max-width:769px) {
+    .search{
+        width: 70vw;
+    }  
 }
